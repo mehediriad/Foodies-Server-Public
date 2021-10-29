@@ -31,12 +31,12 @@ async function run(){
             res.send(items);
         });
 
-         // GET Single Service with ID
+         // GET Single Item with ID
         app.get('/items/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const item = await itemsCollection.findOne(query);
-           
+           console.log(item)
             res.send(item);
         })
 
